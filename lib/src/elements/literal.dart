@@ -10,24 +10,24 @@ abstract class Literal<T> extends Element with Builder {
   );
 
   /// {@macro literal}
-  factory Literal.of(T value) {
+  static Literal of(dynamic value) {
     if (value is bool) {
-      return LiteralBool(value) as Literal<T>;
+      return LiteralBool(value);
     } //
     else if (value is List) {
-      return LiteralList(value) as Literal<T>;
+      return LiteralList(value);
     } //
     else if (value is Map) {
-      return LiteralMap(value) as Literal<T>;
+      return LiteralMap(value);
     } //
     else if (value is num) {
-      return LiteralNum(value) as Literal<T>;
+      return LiteralNum(value);
     } //
     else if (value is String) {
-      return LiteralString(value) as Literal<T>;
+      return LiteralString(value);
     } //
     else if (value == null) {
-      return const LiteralNull() as Literal<T>;
+      return const LiteralNull();
     }
 
     throw UnsupportedError('');
